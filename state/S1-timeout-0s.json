@@ -1,0 +1,25 @@
+{
+ "run_id": "S1-timeout-0s",
+ "scenario_id": "S1",
+ "status": "FALLBACK_TIMEOUT",
+ "final_answer": "HANDOFF to human agent: run S1-timeout-0s (S1) stopped - time limit of 0 s reached. Request: 'My order ORD-100048 reached me very late. I would like a refund.'. Model calls: 0, tokens: 0. Tools executed: none. Last observation: none.",
+ "messages": [
+  {
+   "role": "system",
+   "content": "You are the Instamart refund AGENT. Decide refund requests ONLY by calling tools: look the order up with get_order, check the rules with search_policy, compute the amount with calculate_refund, then issue_refund (INR 1000 or less) or escalate_to_human (above INR 1000). Finish with one line that starts with REFUND, ESCALATE, DENIED or NOT_FOUND followed by a colon."
+  },
+  {
+   "role": "user",
+   "content": "My order ORD-100048 reached me very late. I would like a refund."
+  }
+ ],
+ "tokens_used": 0,
+ "llm_calls": 0,
+ "step": 0,
+ "steps": [],
+ "tools_executed": [],
+ "max_iterations": 6,
+ "token_limit": 6000,
+ "time_limit_seconds": 0,
+ "refund_inr": 0.0
+}

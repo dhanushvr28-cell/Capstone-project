@@ -1,0 +1,60 @@
+{
+ "run_id": "S1-token-limit-200",
+ "scenario_id": "S1",
+ "status": "FALLBACK_TOKEN_LIMIT",
+ "final_answer": "HANDOFF to human agent: run S1-token-limit-200 (S1) stopped - token limit 200 exceeded (222 used). Request: 'My order ORD-100048 reached me very late. I would like a refund.'. Model calls: 2, tokens: 222. Tools executed: get_order. Last observation: {\"order_id\": \"ORD-100048\", \"status\": \"completed\", \"order_amount\": 128.25, \"delivery_minutes\": 65}.",
+ "messages": [
+  {
+   "role": "system",
+   "content": "You are the Instamart refund AGENT. Decide refund requests ONLY by calling tools: look the order up with get_order, check the rules with search_policy, compute the amount with calculate_refund, then issue_refund (INR 1000 or less) or escalate_to_human (above INR 1000). Finish with one line that starts with REFUND, ESCALATE, DENIED or NOT_FOUND followed by a colon."
+  },
+  {
+   "role": "user",
+   "content": "My order ORD-100048 reached me very late. I would like a refund."
+  },
+  {
+   "role": "assistant",
+   "content": null,
+   "tool_calls": [
+    {
+     "id": "call_1",
+     "name": "get_order",
+     "arguments": {
+      "order_id": "ORD-100048"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_1",
+   "name": "get_order",
+   "content": "{\"order_id\": \"ORD-100048\", \"status\": \"completed\", \"order_amount\": 128.25, \"delivery_minutes\": 65}"
+  }
+ ],
+ "tokens_used": 222,
+ "llm_calls": 2,
+ "step": 1,
+ "steps": [
+  {
+   "step": 1,
+   "tool": "get_order",
+   "arguments": {
+    "order_id": "ORD-100048"
+   },
+   "observation": {
+    "order_id": "ORD-100048",
+    "status": "completed",
+    "order_amount": 128.25,
+    "delivery_minutes": 65
+   }
+  }
+ ],
+ "tools_executed": [
+  "get_order"
+ ],
+ "max_iterations": 6,
+ "token_limit": 200,
+ "time_limit_seconds": 10,
+ "refund_inr": 0.0
+}

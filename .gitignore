@@ -1,0 +1,26 @@
+# secrets
+.env
+
+# virtual environments
+.venv/
+venv/
+env/
+
+# python caches
+__pycache__/
+*.pyc
+
+# charts are optional and must not be committed
+*.png
+*.jpg
+*.svg
+*.pdf
+
+# editor / OS noise
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# temporary checkpoint files
+state/*.tmp
